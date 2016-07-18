@@ -1,0 +1,22 @@
+<Context>
+    <!--DB CONNECTION-->
+    <Resource name="jdbc/todo_db"
+              auth="Container"
+              type="javax.sql.DataSource"
+              maxActive="50"
+              maxIdle="30"
+              maxWait="10000"
+              username="todo"
+              password="Mr9XtCMvQbVuYbFY"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/todo?useUnicode=true&amp;characterEncoding=UTF-8"/>
+
+    <Realm className="org.apache.catalina.realm.DataSourceRealm"
+           localDataSource="true"
+           dataSourceName="jdbc/todo_db"
+           userTable="users"
+           userNameCol="login"
+           userCredCol="password"
+           userRoleTable="users"
+           roleNameCol="role"/>
+</Context>
